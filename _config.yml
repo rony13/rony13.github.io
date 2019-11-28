@@ -25,7 +25,7 @@ nav:
   Home: /
   About: /about/
   Writing: /archives/
-  Projects: https://github.com/rony13
+  search: /search/
 
 # Directory
 source_dir: source

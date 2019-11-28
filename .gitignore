@@ -1,1 +1,10 @@
 .deploy_git/
+.DS_Store
+.idea/
+*.log
+*.iml
+.tern-port
+yarn.lock
+package-lock.json
+node_modules/
+
