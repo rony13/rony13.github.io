@@ -19,7 +19,7 @@ Once the final hop accepts the incoming message, it hands it to a __MDA__(mail d
 
 Once delivered to the local mail server, the mail is stored for batch retrieval by authenticated mail clients (MUAs). Mail is retrieved by end-user applications, called email clients, using __IMAP__(Internet Message Access Protocol), a protocol that both facilitates access to mail and manages stored mail, or the __POP3__(Post Office Protocol Version 3) which typically uses the traditional mbox mail file format or a proprietary system such as Microsoft Exchange/Outlook or Lotus Notes/Domino. Webmail clients may use either method, but the retrieval protocol is often not a formal standard.
 
-![overview](/images/smtp_overview.png)
+![overview](/images/smtp-overview.png)
 
 ## MX Record
 
@@ -58,7 +58,7 @@ You need authentication when use port 587, that's why it's recomanded to use bet
 3. Port 465
 Deprecated.
 
-![port](/images/smtp_port.png)
+![port](/images/smtp-port.png)
 
 
 ## Transport Example
