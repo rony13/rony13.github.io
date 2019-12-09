@@ -44,6 +44,7 @@ Authoritative answers can be found from:
 
 ```
 ## Authentication
+Authencication, Authorization and Audit is a big topic, we'll discuss later.
 
 ## Port
 
@@ -59,8 +60,27 @@ Deprecated.
 
 ![port](/images/smtp_port.png)
 
-## Handling of delivery failure
-
 
 ## Transport Example
+```
+~ telnet smtp.163.com 25
+Trying 220.181.12.12...
+Connected to smtp.163.com.
+Escape character is '^]'.
+220 163.com Anti-spam GT for Coremail System (163com[20141201])
+EHLO SMTP
+250-mail
+250-PIPELINING
+250-AUTH LOGIN PLAIN
+250-AUTH=LOGIN PLAIN
+250-coremail 1Uxr2xKj7kG0xkI17xGrU7I0s8FY2U3Uj8Cz28x1UUUUU7Ic2I0Y2UFJbpo8UCa0xDrUUUUj
+250-STARTTLS
+250 8BITMIME
+AUTH LOGIN
+334 dXNlcm5hbWU6
+dG9ueUAxNjMuY29t
+334 UGFzc3dvcmQ6
+dGVzdA==
+535 Error: authentication failed
+```
 
