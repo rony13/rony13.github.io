@@ -1,5 +1,5 @@
 ---
 title: OAuth2.0
-categories: sso
+category: sso
 date: 2019-11-28 16:11:17
 ---

@@ -1,6 +1,6 @@
 ---
 title: How to Send Non-Spam E-mail
-categories: email
+category: email
 date: 2019-11-29 11:48:16
 ---
 
