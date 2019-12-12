@@ -1,6 +1,6 @@
 ---
 title: Simple Mail Transfer Protocol (SMTP)
-category: email
+categories: email
 date: 2019-11-28 14:48:16
 ---
 

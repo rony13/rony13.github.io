@@ -1,6 +1,6 @@
 ---
 title: MSGP
-category: golang
+categories: golang
 date: 2019-12-09 14:26:00
 ---
 
