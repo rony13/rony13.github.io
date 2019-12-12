@@ -1,6 +1,6 @@
 ---
-title: kerberos
-category: authenticity
+title: Kerberos
+category: authentication
 date: 2019-12-09 18:45:50
 ---
 This is the classic dialogue to explain the principle of Kerberos.
