@@ -1,9 +1,10 @@
 ---
-title: why good leaders make you feel safe
-categories: odd
+title: Why Good Leaders Make You Feel Safe
+categories: ted
 date: 2019-12-26 11:31:15
 ---
-[TED Talk from https://www.ted.com/talks/simon_sinek_why_good_leaders_make_you_feel_safe?referrer=playlist-how_to_be_a_good_mentor]
+
+[original address]( https://www.ted.com/talks/simon_sinek_why_good_leaders_make_you_feel_safe?referrer=playlist-how_to_be_a_good_mentor)
 
 There’s a man by the name of Captain William Swenson, who recently was awarded the congressional Medal of Honor for his actions on September 8, 2009. On that day, a column of American and Afghan troops were making their way through a part of Afghanistan to help protect a group of government officials who would be meeting with come local village elders. The column came under ambush, and was surrounded on three sides, and amongst many other things, Captain Swenson was recognized for running into live fire to rescue the wounded and pull out the dead. One of the people he rescued was a sergeant, and he and a comrade were making their way to a medevac helicopter. And what was remarkable about this day is, by sheer coincidence, one of the medevac medics happened to have a GoPro camera on his helmet and captured the whole scene on camera. It shows Captain Swenson and his comrade bringing this wounded soldier who had received a gunshot to the neck. They put him in the helicopter, and then you see Captain Swenson bend over and give him a kiss before he turns around to rescue more. 
 
