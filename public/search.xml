@@ -4,6 +4,71 @@
   
     
     <entry>
+      <title>affiliate</title>
+      <link href="/2020/01/06/business/affiliate/"/>
+      <url>/2020/01/06/business/affiliate/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nginx</title>
+      <link href="/2020/01/05/operation/nginx/"/>
+      <url>/2020/01/05/operation/nginx/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>InfluxDB</title>
+      <link href="/2020/01/03/storage/InfluxDB/"/>
+      <url>/2020/01/03/storage/InfluxDB/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Redis</title>
+      <link href="/2020/01/03/storage/Redis/"/>
+      <url>/2020/01/03/storage/Redis/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LevelDB</title>
+      <link href="/2020/01/03/storage/LevelDB/"/>
+      <url>/2020/01/03/storage/LevelDB/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Consensus Protocol: Paxos, Zab and Raft</title>
       <link href="/2020/01/02/cloud/Consensus-Protocol-Paxos-Zab-and-Raft/"/>
       <url>/2020/01/02/cloud/Consensus-Protocol-Paxos-Zab-and-Raft/</url>
@@ -18,8 +83,8 @@
     
     <entry>
       <title>RocksDB</title>
-      <link href="/2020/01/02/db/RocksDB/"/>
-      <url>/2020/01/02/db/RocksDB/</url>
+      <link href="/2020/01/02/storage/RocksDB/"/>
+      <url>/2020/01/02/storage/RocksDB/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -31,8 +96,8 @@
     
     <entry>
       <title>TiDB</title>
-      <link href="/2020/01/02/db/TiDB/"/>
-      <url>/2020/01/02/db/TiDB/</url>
+      <link href="/2020/01/02/storage/TiDB/"/>
+      <url>/2020/01/02/storage/TiDB/</url>
       
         <content type="html"><![CDATA[]]></content>
       
