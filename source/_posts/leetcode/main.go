@@ -2,201 +2,115 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func main() {
-	fmt.Println(maxPoints([][]int{
-		{1, 1},
-		{2, 1},
-		{2, 2},
-		{1, 4},
-		{3, 3},
-	}))
-
+	fmt.Println(nearestPalindromic("12389"))
 }
 
-const (
-	VerticalSlope   = "INF"
-	HorizontalSlope = "NA"
-)
-
-type Point struct {
-	X int
-	Y int
-	I int
-}
-
-func (p Point) ID() string {
-	return fmt.Sprintf("%v:%v:%v", p.X, p.Y, p.I)
-}
-
-func (p Point) Vertical() Line {
-	return Line{
-		Points: map[string]Point{
-			p.ID(): p,
-		},
-		Slope: VerticalSlope,
-		C:     fmt.Sprint(p.X),
-	}
-}
-
-func (p Point) Horizontal() Line {
-	return Line{
-		Points: map[string]Point{
-			p.ID(): p,
-		},
-		Slope: HorizontalSlope,
-		C:     fmt.Sprint(p.Y),
-	}
-}
-func (p1 Point) Duplicate(p2 Point) bool {
-	dx := p2.X - p1.X
-	dy := p2.Y - p1.Y
-	return dx == 0 && dy == 0 && p1.I != p2.I
-}
-
-func (p1 Point) Oblique(p2 Point) Line {
-	dx := p2.X - p1.X
-	dy := p2.Y - p1.Y
-
-	if dx == 0 {
-		l := p1.Vertical()
-		l.Add(p2)
-		return l
+func nearestPalindromic(n string) string {
+	bytes := []rune(n)
+	for i := 0; i < len(bytes)/2; i++ {
+		bytes[len(bytes)-1-i] = bytes[i]
 	}
 
-	if dy == 0 {
-		l := p1.Horizontal()
-		l.Add(p2)
-		return l
-	}
+	result := string(bytes)
 
-	d := gcd(dx, dy)
-	if d > 1 || d < -1 {
-		dy /= d
-		dx /= d
-	}
-	slopeSymbol := dx/dy > 0
-	slope := fmt.Sprintf("%v:%v:%v", slopeSymbol, abs(dx), abs(dy))
-
-	c1 := p1.Y*dx - p1.X*dy
-	c2 := dx
-	cd := gcd(c1, c2)
-	if cd > 1 || cd < -1 {
-		c1 /= cd
-		c2 /= cd
-	}
-	cSymbol := c1/c2 > 0
-
-	c := fmt.Sprintf("%v:%v:%v", cSymbol, abs(c1), abs(c2))
-
-	return Line{
-		Points: map[string]Point{
-			p1.ID(): p1,
-			p2.ID(): p2,
-		},
-		Slope: slope,
-		C:     c,
-	}
-}
-
-type Line struct {
-	Points map[string]Point
-	Slope  string
-	C      string
-}
-
-func (l Line) ID() string {
-	return fmt.Sprintf("%s:%s", l.Slope, l.C)
-}
-
-func (l Line) Contain(p Point) bool {
-	if _, ok := l.Points[p.ID()]; ok {
-		return true
-	} else {
-		return false
-	}
-}
-
-func (l Line) Add(p Point) {
-	l.Points[p.ID()] = p
-}
-
-type Lines map[string]Line
-
-func (ls Lines) Add(l Line) {
-	if _, ok := ls[l.ID()]; ok {
-		for _, p := range l.Points {
-			ls[l.ID()].Add(p)
+	left := []rune(n)[0 : len(n)/2]
+	odd := len(n)%2 == 1
+	if odd {
+		a := bytes[len(bytes)/2]
+		if a == '0' {
+			result = closer(n, result, string(left)+"1"+reverse(string(left)))
+		}
+		if a == '9' {
+			result = closer(n, result, string(left)+"8"+reverse(string(left)))
+		}
+		if a > '0' && a < '9' {
+			bigger := string(left) + string(a+1) + reverse(string(left))
+			smaller := string(left) + string(a-1) + reverse(string(left))
+			result = closer(n, result, closer(n, bigger, smaller))
 		}
 	} else {
-		ls[l.ID()] = l
+		a := left[len(left)-1]
+		if a == '0' {
+			left[len(left)-1] = '1'
+			result = closer(n, result, string(left)+reverse(string(left)))
+		}
+		if a == '9' {
+			left[len(left)-1] = '8'
+			result = closer(n, result, string(left)+reverse(string(left)))
+		}
+		if a > '0' && a < '9' {
+			left[len(left)-1] = a + 1
+			bigger := string(left) + reverse(string(left))
+			left[len(left)-1] = a - 1
+			smaller := string(left) + reverse(string(left))
+			result = closer(n, result, closer(n, bigger, smaller))
+		}
 	}
+
+	minimum := make([]rune, len(n)-1)
+	if len(n) > 1 {
+		for i := 0; i < len(n)-1; i++ {
+			minimum[i] = '9'
+		}
+	} else {
+		minimum = []rune{'0'}
+	}
+	maximum := make([]rune, len(n)+1)
+	for i := 0; i < len(n)+1; i++ {
+		if i == 0 || i == len(n) {
+			maximum[i] = '1'
+		} else {
+			maximum[i] = '0'
+		}
+	}
+	return closer(n, closer(n, result, string(minimum)), string(maximum))
+
 }
 
-func maxPoints(points [][]int) int {
-	ls := Lines{}
-	var ps []Point
-	for i, p := range points {
-		ps = append(ps, Point{
-			X: p[0],
-			Y: p[1],
-			I: i,
-		})
+func closer(target, a, b string) string {
+	ti, _ := strconv.ParseInt(target, 10, 64)
+	ai, _ := strconv.ParseInt(a, 10, 64)
+	bi, _ := strconv.ParseInt(b, 10, 64)
+	if ti == ai {
+		return b
+	}
+	if ti == bi {
+		return a
+	}
+	if abs(ti-ai) < abs(ti-bi) {
+		return a
+	}
+	if abs(ti-ai) > abs(ti-bi) {
+		return b
 	}
 
-	for _, p1 := range ps {
-		ls.Add(p1.Horizontal())
-		ls.Add(p1.Vertical())
-
-		duplicateSet := Line{
-			Points: map[string]Point{},
-		}
-		tmpLines := Lines{}
-		for _, p2 := range ps {
-			if p1.Duplicate(p2) {
-				duplicateSet.Add(p1)
-				duplicateSet.Add(p2)
-				continue
-			}
-
-			l := p1.Oblique(p2)
-			tmpLines.Add(l)
-		}
-
-		for _, l := range tmpLines {
-			ls.Add(l)
-		}
-	}
-
-	var maxLine Line
-	for _, l := range ls {
-		if len(maxLine.Points) < len(l.Points) {
-			maxLine = l
-		}
-	}
-	return len(maxLine.Points)
-}
-
-func max(a, b int) int {
-	if a > b {
+	if ai < bi {
 		return a
 	}
 	return b
 }
 
-func abs(a int) int {
-	if a < 0 {
+func abs(a int64) int64 {
+	if a > 0 {
+		return a
+	} else {
 		return -a
 	}
-	return a
+
 }
 
-func gcd(a, b int) int {
-	for b != 0 {
-		t := b
-		b = a % b
-		a = t
+func reverse(input string) string {
+	if input == "" {
+		return input
 	}
-	return a
+	output := make([]rune, len(input))
+	for i, c := range input {
+		output[len(input)-1-i] = c
+	}
+	return string(output)
+
 }
