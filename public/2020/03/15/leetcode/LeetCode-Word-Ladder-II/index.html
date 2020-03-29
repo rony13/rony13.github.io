@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="1const WildCard &amp;#x3D; &amp;quot;,&amp;quot;2const InfinityDistance &amp;#x3D; math.MaxInt3234type Ladder string56func (l Ladder) AddWord(w string) Ladder &amp;#123;7	return Ladder(fmt.Sprintf(&amp;quot;%s%s%s&amp;quot;, l,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode: Word Ladder II">
+<meta property="og:url" content="https:&#x2F;&#x2F;rony13.github.io&#x2F;2020&#x2F;03&#x2F;15&#x2F;leetcode&#x2F;LeetCode-Word-Ladder-II&#x2F;index.html">
+<meta property="og:site_name" content="Odd Things">
+<meta property="og:description" content="1const WildCard &amp;#x3D; &amp;quot;,&amp;quot;2const InfinityDistance &amp;#x3D; math.MaxInt3234type Ladder string56func (l Ladder) AddWord(w string) Ladder &amp;#123;7	return Ladder(fmt.Sprintf(&amp;quot;%s%s%s&amp;quot;, l,">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-03-22T09:53:16.357Z">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+          
+        
+    
+    <!-- title -->
+    <title>LeetCode: Word Ladder II</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/categories/">Category</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/03/25/leetcode/LeetCode-Wildcard-Matching/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020/03/15/leetcode/LeetCode-Find-the-Closest-Palindrome/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&text=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&title=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&is_video=false&description=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=LeetCode: Word Ladder II&body=Check out this article: https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&title=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&title=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&title=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&title=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&name=LeetCode: Word Ladder II&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&t=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        LeetCode: Word Ladder II
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Odd Things</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-03-15T07:03:56.000Z" itemprop="datePublished">2020-03-15</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">const WildCard &#x3D; &quot;,&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">const InfinityDistance &#x3D; math.MaxInt32</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">type Ladder string</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">func (l Ladder) AddWord(w string) Ladder &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	return Ladder(fmt.Sprintf(&quot;%s%s%s&quot;, l, WildCard, w))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">func (l Ladder) Duplicated(l1 Ladder) bool &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">	return l &#x3D;&#x3D; l1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">func (l Ladder) ToResult() []string &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">	return strings.Split(string(l), WildCard)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">type Word struct &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">	Content   string</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">	Nearbys   map[string]*Word</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">	Ladders   map[Ladder]bool</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">	Distance  int32</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">	Estimate  int32</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">	Available bool</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">func CalculateEstimate(w1, w2 *Word) int32 &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">	if w1 &#x3D;&#x3D; nil || w2 &#x3D;&#x3D; nil || len(w1.Content) !&#x3D; len(w2.Content) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">		return InfinityDistance</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">	var result int32</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">	for i, c :&#x3D; range w1.Content &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">		if c !&#x3D; rune(w2.Content[i]) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line">			result++</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line">		&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line">	return result</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line">func Link(w1, w2 *Word) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">43</span></pre></td><td class="code"><pre><span class="line">	if CalculateEstimate(w1, w2) &#x3D;&#x3D; 1 &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">44</span></pre></td><td class="code"><pre><span class="line">		w1.Nearbys[w2.Content] &#x3D; w2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">45</span></pre></td><td class="code"><pre><span class="line">		w2.Nearbys[w1.Content] &#x3D; w1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">46</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">47</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">48</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">49</span></pre></td><td class="code"><pre><span class="line">type Words []*Word</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">50</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">51</span></pre></td><td class="code"><pre><span class="line">func (ws *Words) Size() int &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">52</span></pre></td><td class="code"><pre><span class="line">	if ws &#x3D;&#x3D; nil &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">53</span></pre></td><td class="code"><pre><span class="line">		return 0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">54</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">55</span></pre></td><td class="code"><pre><span class="line">	return len(*ws)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">56</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">57</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">58</span></pre></td><td class="code"><pre><span class="line">func (ws Words) Len() int &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">59</span></pre></td><td class="code"><pre><span class="line">	return len(ws)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">60</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">61</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">62</span></pre></td><td class="code"><pre><span class="line">func (ws Words) Less(i, j int) bool &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">63</span></pre></td><td class="code"><pre><span class="line">	return ws[i].Estimate+ws[i].Distance &lt; ws[j].Estimate+ws[j].Distance</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">64</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">65</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">66</span></pre></td><td class="code"><pre><span class="line">func (ws Words) Swap(i, j int) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">67</span></pre></td><td class="code"><pre><span class="line">	ws[i], ws[j] &#x3D; ws[j], ws[i]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">68</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">69</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">70</span></pre></td><td class="code"><pre><span class="line">func (ws *Words) Push(w interface&#123;&#125;) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">71</span></pre></td><td class="code"><pre><span class="line">	if ws &#x3D;&#x3D; nil &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">72</span></pre></td><td class="code"><pre><span class="line">		return</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">73</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">74</span></pre></td><td class="code"><pre><span class="line">	&#x2F;&#x2F;TODO 探索一下</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">75</span></pre></td><td class="code"><pre><span class="line">	*ws &#x3D; append(*ws, w.(*Word))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">76</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">77</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">78</span></pre></td><td class="code"><pre><span class="line">func (ws *Words) Pop() interface&#123;&#125; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">79</span></pre></td><td class="code"><pre><span class="line">	old :&#x3D; *ws</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">80</span></pre></td><td class="code"><pre><span class="line">	n :&#x3D; len(old)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">81</span></pre></td><td class="code"><pre><span class="line">	item :&#x3D; old[n-1]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">82</span></pre></td><td class="code"><pre><span class="line">	*ws &#x3D; old[0 : n-1]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">83</span></pre></td><td class="code"><pre><span class="line">	return item</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">84</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">85</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">86</span></pre></td><td class="code"><pre><span class="line">func findLadders(beginWord string, endWord string, wordList []string) [][]string &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">87</span></pre></td><td class="code"><pre><span class="line">	MinDistance :&#x3D; int32(math.MaxInt32)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">88</span></pre></td><td class="code"><pre><span class="line">	wordMap :&#x3D; make(map[string]*Word)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">89</span></pre></td><td class="code"><pre><span class="line">	origin :&#x3D; &amp;Word&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">90</span></pre></td><td class="code"><pre><span class="line">		Content: beginWord,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">91</span></pre></td><td class="code"><pre><span class="line">		Nearbys: make(map[string]*Word),</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">92</span></pre></td><td class="code"><pre><span class="line">		Ladders: map[Ladder]bool&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">93</span></pre></td><td class="code"><pre><span class="line">			Ladder(beginWord): true,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">94</span></pre></td><td class="code"><pre><span class="line">		&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">95</span></pre></td><td class="code"><pre><span class="line">		Distance:  0,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">96</span></pre></td><td class="code"><pre><span class="line">		Estimate:  InfinityDistance,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">97</span></pre></td><td class="code"><pre><span class="line">		Available: false,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">98</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">99</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">100</span></pre></td><td class="code"><pre><span class="line">	destination :&#x3D; &amp;Word&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">101</span></pre></td><td class="code"><pre><span class="line">		Content:   endWord,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">102</span></pre></td><td class="code"><pre><span class="line">		Nearbys:   make(map[string]*Word),</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">103</span></pre></td><td class="code"><pre><span class="line">		Ladders:   make(map[Ladder]bool),</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">104</span></pre></td><td class="code"><pre><span class="line">		Distance:  InfinityDistance,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">105</span></pre></td><td class="code"><pre><span class="line">		Estimate:  0,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">106</span></pre></td><td class="code"><pre><span class="line">		Available: true,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">107</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">108</span></pre></td><td class="code"><pre><span class="line">	origin.Estimate &#x3D; CalculateEstimate(origin, destination)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">109</span></pre></td><td class="code"><pre><span class="line">	wordMap[beginWord] &#x3D; origin</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">110</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">111</span></pre></td><td class="code"><pre><span class="line">	for _, w :&#x3D; range wordList &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">112</span></pre></td><td class="code"><pre><span class="line">		if wordMap[w] !&#x3D; nil &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">113</span></pre></td><td class="code"><pre><span class="line">			continue</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">114</span></pre></td><td class="code"><pre><span class="line">		&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">115</span></pre></td><td class="code"><pre><span class="line">		word :&#x3D; &amp;Word&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">116</span></pre></td><td class="code"><pre><span class="line">			Content:   w,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">117</span></pre></td><td class="code"><pre><span class="line">			Nearbys:   make(map[string]*Word),</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">118</span></pre></td><td class="code"><pre><span class="line">			Ladders:   make(map[Ladder]bool),</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">119</span></pre></td><td class="code"><pre><span class="line">			Available: true,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">120</span></pre></td><td class="code"><pre><span class="line">			Distance:  InfinityDistance,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">121</span></pre></td><td class="code"><pre><span class="line">		&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">122</span></pre></td><td class="code"><pre><span class="line">		word.Estimate &#x3D; CalculateEstimate(word, destination)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">123</span></pre></td><td class="code"><pre><span class="line">		wordMap[w] &#x3D; word</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">124</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">125</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">126</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">127</span></pre></td><td class="code"><pre><span class="line">	if wordMap[endWord] &#x3D;&#x3D; nil &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">128</span></pre></td><td class="code"><pre><span class="line">		return nil</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">129</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">130</span></pre></td><td class="code"><pre><span class="line">	wordMap[endWord] &#x3D; destination</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">131</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">132</span></pre></td><td class="code"><pre><span class="line">	for _, w1 :&#x3D; range wordMap &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">133</span></pre></td><td class="code"><pre><span class="line">		for _, w2 :&#x3D; range wordMap &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">134</span></pre></td><td class="code"><pre><span class="line">			Link(w1, w2)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">135</span></pre></td><td class="code"><pre><span class="line">		&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">136</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">137</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">138</span></pre></td><td class="code"><pre><span class="line">	wordHeap :&#x3D; &amp;Words&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">139</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">140</span></pre></td><td class="code"><pre><span class="line">	heap.Push(wordHeap, origin)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">141</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">142</span></pre></td><td class="code"><pre><span class="line">	for &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">143</span></pre></td><td class="code"><pre><span class="line">		if wordHeap.Size() &#x3D;&#x3D; 0 &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">144</span></pre></td><td class="code"><pre><span class="line">			break</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">145</span></pre></td><td class="code"><pre><span class="line">		&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">146</span></pre></td><td class="code"><pre><span class="line">		word :&#x3D; heap.Pop(wordHeap).(*Word)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">147</span></pre></td><td class="code"><pre><span class="line">		for _, nearby :&#x3D; range word.Nearbys &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">148</span></pre></td><td class="code"><pre><span class="line">			if nearby.Distance &gt;&#x3D; word.Distance+1 &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">149</span></pre></td><td class="code"><pre><span class="line">				nearby.Available &#x3D; true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">150</span></pre></td><td class="code"><pre><span class="line">			&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">151</span></pre></td><td class="code"><pre><span class="line">			if !nearby.Available &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">152</span></pre></td><td class="code"><pre><span class="line">				continue</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">153</span></pre></td><td class="code"><pre><span class="line">			&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">154</span></pre></td><td class="code"><pre><span class="line">			if nearby.Distance &gt; word.Distance+1 &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">155</span></pre></td><td class="code"><pre><span class="line">				nearby.Distance &#x3D; word.Distance + 1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">156</span></pre></td><td class="code"><pre><span class="line">				nearby.Ladders &#x3D; make(map[Ladder]bool)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">157</span></pre></td><td class="code"><pre><span class="line">				for ladder, _ :&#x3D; range word.Ladders &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">158</span></pre></td><td class="code"><pre><span class="line">					nearby.Ladders[ladder.AddWord(nearby.Content)] &#x3D; true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">159</span></pre></td><td class="code"><pre><span class="line">				&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">160</span></pre></td><td class="code"><pre><span class="line">			&#125; else if nearby.Distance &#x3D;&#x3D; word.Distance+1 &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">161</span></pre></td><td class="code"><pre><span class="line">				for ladder, _ :&#x3D; range word.Ladders &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">162</span></pre></td><td class="code"><pre><span class="line">					nearby.Ladders[ladder.AddWord(nearby.Content)] &#x3D; true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">163</span></pre></td><td class="code"><pre><span class="line">				&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">164</span></pre></td><td class="code"><pre><span class="line">			&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">165</span></pre></td><td class="code"><pre><span class="line">			if nearby.Content &#x3D;&#x3D; destination.Content &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">166</span></pre></td><td class="code"><pre><span class="line">				if nearby.Distance &lt; MinDistance &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">167</span></pre></td><td class="code"><pre><span class="line">					MinDistance &#x3D; nearby.Distance</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">168</span></pre></td><td class="code"><pre><span class="line">				&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">169</span></pre></td><td class="code"><pre><span class="line">			&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">170</span></pre></td><td class="code"><pre><span class="line">			if nearby.Distance+nearby.Estimate &lt;&#x3D; MinDistance &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">171</span></pre></td><td class="code"><pre><span class="line">				nearby.Available &#x3D; false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">172</span></pre></td><td class="code"><pre><span class="line">				heap.Push(wordHeap, nearby)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">173</span></pre></td><td class="code"><pre><span class="line">			&#125; else &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">174</span></pre></td><td class="code"><pre><span class="line">				nearby.Available &#x3D; false</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">175</span></pre></td><td class="code"><pre><span class="line">			&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">176</span></pre></td><td class="code"><pre><span class="line">		&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">177</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">178</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">179</span></pre></td><td class="code"><pre><span class="line">	var result [][]string</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">180</span></pre></td><td class="code"><pre><span class="line">	for ladder, _ :&#x3D; range destination.Ladders &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">181</span></pre></td><td class="code"><pre><span class="line">		result &#x3D; append(result, ladder.ToResult())</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">182</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">183</span></pre></td><td class="code"><pre><span class="line">	return result</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">184</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">185</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/categories/">Category</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&text=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&title=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&is_video=false&description=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=LeetCode: Word Ladder II&body=Check out this article: https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&title=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&title=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&title=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&title=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&name=LeetCode: Word Ladder II&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://rony13.github.io/2020/03/15/leetcode/LeetCode-Word-Ladder-II/&t=LeetCode: Word Ladder II" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 DL
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/categories/">Category</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
